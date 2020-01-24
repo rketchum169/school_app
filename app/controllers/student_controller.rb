@@ -1,4 +1,4 @@
-class StudentsController < ApplicationController
+class StudentController < ApplicationController
   before_action :set_school
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
