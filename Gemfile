@@ -15,7 +15,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails'
+  gem 'rspec-rails','~> 4.0.0.beta4'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'database_cleaner'
   gem 'simplecov'

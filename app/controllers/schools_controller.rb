@@ -7,6 +7,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
+    load_school
   end
 
   def new
@@ -24,10 +25,12 @@ class SchoolsController < ApplicationController
   end
 
   def edit
+    load_school
   end
 
   def update
-    if @school.update(params)
+    load_school
+    if @school.update(school_params)
       redirect_to(school_path(@school), notice: "School updated")
     else
       flash.now.alert = "Error saving school"
@@ -36,6 +39,7 @@ class SchoolsController < ApplicationController
   end
 
   def destroy
+    load_school
     @school.destroy
     redirect_to(schools_path, notice: "School deleted")
   end

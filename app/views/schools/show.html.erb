@@ -2,7 +2,7 @@
 <%= link_to("Add student", new_student_path(@school)) %>
 
 <ul>
-  <% @school.students.each do |student| %>
+  <% @school.student.each do |student| %>
     <li>
       <%= student.name %>
       - <%= link_to("edit", edit_school_student_path(@school, student)) %>
