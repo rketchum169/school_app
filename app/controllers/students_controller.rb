@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
 
   # GET /schools/1/students/new
   def new
-    @student = @school.students.new
+    @student = Student.new
   end
 
   # GET /schools/1/students/1/edit
@@ -50,7 +50,7 @@ class StudentsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_school
-      @school = School.find(params[:school_id])
+      @load_school
     end
 
     def set_student
