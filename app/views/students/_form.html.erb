@@ -1,0 +1,21 @@
+<p>
+<div>
+  <%= f.label(:name) %><br>
+  <%= f.text_field(:name) %>
+</div>
+<div>
+  <%= f.label(:student_number) %><br>
+  <%= f.text_area(:student_number) %>
+</div>
+<div>
+  <%= f.label(:GPA) %><br>
+  <%= f.text_area(:gpa) %>
+</div>
+</p>
+
+<%# t.bigint "school_id"
+    t.string "name", null: false
+    t.integer "student_number", default: 0, null: false
+    t.float "gpa", default: 0.0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false %>

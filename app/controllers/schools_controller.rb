@@ -6,7 +6,6 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    load_school
   end
 
   def new

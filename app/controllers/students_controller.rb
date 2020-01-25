@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 
   # POST /schools/1/students
   def create
-    @student = @school.student.new(student_params)
+    @student = Student.new(student_params)
 
     if @student.save
       redirect_to @student, notice: 'Student is created'
@@ -43,7 +43,7 @@ class StudentsController < ApplicationController
   # DELETE /schools/1/students/1
   def destroy
     @student.destroy
-    redirect_to school_students_path(@school), notice: 'School is deleted'
+    redirect_to school_path(@school), notice: 'School is deleted'
   end
 
   private
@@ -54,7 +54,7 @@ class StudentsController < ApplicationController
     end
 
     def set_student
-      @student = @school.students.find(params[:id])
+      Student.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
