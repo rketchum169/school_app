@@ -63,7 +63,7 @@ RSpec.describe School, type: :model do
   end
 
   describe "uniqueness" do
-    School.create!(name: 'foo', address: '123', principal: 'mt')
+    School.new(name: 'foo', address: '123', principal: 'mt')
     subject { School.new(name: 'foo', address: '123', principal: 'mt') }
     it { should validate_uniqueness_of(:name) }
   end

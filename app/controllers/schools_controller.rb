@@ -18,8 +18,7 @@ class SchoolsController < ApplicationController
     @school = School.new(school_params)
     if @school.save
       redirect_to(school_path(@school), notice: "School added")
-    else
-      flash.now.alert = "Error saving school"
+    else 
       render(:new)
     end
   end
@@ -34,7 +33,7 @@ class SchoolsController < ApplicationController
       redirect_to(school_path(@school), notice: "School updated")
     else
       flash.now.alert = "Error saving school"
-      render(:edit)
+      redirect_to(edit_school_path(@school))
     end
   end
 
